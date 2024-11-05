@@ -47,6 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       carritoVacioElement.style.display = "block";
       continuarCompraElement.style.display = "none";
+      cantidadElement.textContent = "0";
+      precioElement.textContent = "0.00";
     }
   }
 
