@@ -3,11 +3,16 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch(
       "https://world.openfoodfacts.org/cgi/search.pl?search_terms=snack&json=true&lc=es"
     )
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.products && data.products.length > 0) {
-          const productos = data.products.slice(0, 6);
-          // console.log(productos);
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.products && data.products.length > 0) {
+        const productos = data.products.slice(0, 6).map((producto) => ({
+     
+          image_url: producto.image_url,
+          product_name: producto.product_name,
+          generic_name: producto.generic_name || "Descripción no disponible",
+          
+        }));
 
           let productosHTML = `
           <h2>Productos</h2>
