@@ -72,8 +72,11 @@ header {
 }
 
 /* ----------------------------------------------------------------------- */
-/* CARRITO */
+/* CARRITO NAV BAR*/
 /* ----------------------------------------------------------------------- */
+.carrito{
+  margin-right: 10px;
+}
 .carrito a:first-child{
   position: relative;
   margin-right: 10px;
@@ -107,7 +110,6 @@ header {
   position: absolute;
 
  }
- 
 
 /* ----------------------------------------------------------------------- */
 /* BARRA DE NAVEGACIÓN */
@@ -297,12 +299,18 @@ details {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  padding: 0px 20px 20px;
+  padding: 0px 120px 20px;
 }
 
 .resenias p {
   color: var(--fondo-oscuro);
   font-weight: bolder;
+}
+
+#resenias img{
+  max-width: 100%;
+  aspect-ratio: 1;
+  border-radius: 8px;
 }
 
 .card {
@@ -410,30 +418,33 @@ details {
 /* ----------------------------------------------------------------------- */
 @media (min-width: 320px) and (max-width: 599px) {
   .logo {
-    width: 40px;
+    max-width: 60px;
   }
 
-  .carrito a{
-    font-size: 1em;
-  }
+  
+    h1 {
+      flex: 1; 
+      font-size: 22px;
+    }
+   
 
   .resenias {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+ 
   }
 
   .card {
     margin: 0 auto;
-    width: 90%;
+    width: 100%;
   }
   .mapa {
     width: 100%;
   }
 
-  h1 {
-    font-size: 30px;
-    font-weight: 800;
-  }
+
 
   h2 {
     font-size: 20px;
@@ -458,67 +469,36 @@ details {
   .anio {
     margin-right: 0px;
   }
-}
-/* ----------------------------------------------------------------------- */
-/* DISEÑO PARA PANTALLAS TAMAÑO PEQUEÑO */
-/* ----------------------------------------------------------------------- */
-@media (max-width: 600px) {
-  .container-fluid {
-    background-color: #f0f0f0;
-  }
-
-  .carrito a{
-    font-size: 1.6em;
-  }
-
-  .productos {
-    flex: 1 1 150px;
-  }
-
-  #contact-container {
-    flex-direction: column;
-  }
-
-  #contacto form {
-    max-width: 60vw;
-    padding: 6px;
-  }
-
-  #name,
-  #mail,
-  #message,
-  #contacto button {
-    padding: 6px;
-  }
-
-  #contacto button {
-    padding: 8px;
-  }
-
-  #contacto form {
-    width: 70vw;
-  }
 
   .texto-pie,
   .redes i {
-    font-size: 16px;
-    padding-left: 5px;
+    font-size: 14px;
   }
-
-  .redes {
-    gap: 5px;
-  }
-}
+  } 
 
 /* ----------------------------------------------------------------------- */
 /* DISEÑO PARA PANTALLAS TAMAÑO TABLET */
 /* ----------------------------------------------------------------------- */
-@media (min-width: 601px) and (max-width: 990px) {
+@media (min-width: 600px) and (max-width: 990px) {
   .container-fluid {
     background-color: #f0f0f0;
   }
+   h1{
+   font-size: 4vw;
+  }
 
-  #contacto form {
+
+  .resenias{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+.card{
+  width:350px ;
+  
+}
+
+ #contacto form {
     width: 70vw;
   }
 
@@ -535,7 +515,7 @@ details {
 
   .texto-pie,
   .redes i {
-    font-size: 16px;
+    font-size: 2vw;
   }
 
   .redes {

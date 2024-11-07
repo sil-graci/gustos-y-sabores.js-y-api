@@ -46,8 +46,8 @@
   }
 
 .card-body img{
-    width: 40px;
-    height: 55px;
+    width: 70px;
+    height: 75px;
 }
 
 
@@ -58,11 +58,23 @@
     
 }
 
-
-#totales p, #totales button {
-    font-size: 1.2em;
+#grupo-p{
+    display: flex;
+    gap: 35px;
 }
 
+#grupo-btn{
+    display: flex;
+    gap: 20px;
+}
+#totales p, #totales button {
+    font-size: 1.2em;
+    
+}
+
+#totales p{
+    font-weight: bolder;
+}
 .mas button{
     background-color: rgb(217, 73, 73);
     padding: 5px px;
@@ -106,21 +118,34 @@
 }
 
 /* ----------------------------------------------------------------------- */
+/* DISEÑO PARA PANTALLAS TAMAÑO TABLET */
+/* ----------------------------------------------------------------------- */
+@media (min-width: 600px) and (max-width: 990px){ 
+ #grupo-btn{
+    flex-direction: column;
+    gap: 0px;
+}
+
+#totales p, #totales button {
+    font-size: 1em;   
+}
+
+#totales p{
+    font-weight: bolder;
+}
+ 
+}
+
+/* ----------------------------------------------------------------------- */
 /* DISEÑO PARA PANTALLAS TAMAÑO MÓVILES PEQUEÑOS */
 /* ----------------------------------------------------------------------- */
 @media (min-width: 320px) and (max-width: 599px){
     #totales p, #totales button {
         font-size: 0.8em;
     }
- 
-    
-}
+    #grupo-btn{
+        flex-direction: column;
+        gap: 0px;
+    }
 
-/* ----------------------------------------------------------------------- */
-/* DISEÑO PARA PANTALLAS TAMAÑO TABLET */
-/* ----------------------------------------------------------------------- */
-@media (min-width: 600px) and (max-width: 990px){ 
- #reiniciar{
-    margin-left: 25px;
- }
 }

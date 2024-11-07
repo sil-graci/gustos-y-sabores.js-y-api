@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gustos y sabores</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet">
-      <script
-        src="https://kit.fontawesome.com/c99156e4ac.js"
-        crossorigin="anonymous"
-      ></script>
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/c99156e4ac.js"
+      crossorigin="anonymous"
+    ></script>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="shortcut icon" href="./images/logo.ico" type="image/x-icon">
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="shortcut icon" href="./images/logo.ico" type="image/x-icon" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet">
-    <link rel="stylesheet" href="./styles/styles.css">
-    <link rel="stylesheet" href="./styles/carrito.css">
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/resenias.css" />
+    <link rel="stylesheet" href="./styles/carrito.css" />
     <!-- <link rel="stylesheet" href="./styles/style2.css"> -->
   </head>
   <body>
@@ -30,23 +34,31 @@
         <img
           class="logo"
           src="./images/logo.png"
-          alt="Logo de Gustos y Sabores">
+          alt="Logo de Gustos y Sabores"
+        />
 
         <h1 class="titulo">Gustos y Sabores</h1>
 
         <div class="carrito">
-          <a id="carrito-contar" href="./pages/carrito.html" aria-label="Ver carrito de compras">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <span id="cuenta-carrito">0</span>
-          </a>
-          <a id="usuario" href="#" aria-label="Ver usuario">
+          <div id="icono-y-contador">
+            <a
+              id="carrito-contar"
+              href="./pages/carrito.html"
+              aria-label="Ver carrito de compras"
+            >
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span id="cuenta-carrito">0</span>
+            </a>
+          </div>
+          <div id="icono-usuario">
+          <a id="usuario" href="#contacto" aria-label="Ver usuario">
             <i class="fa-regular fa-circle-user"></i>
           </a>
         </div>
-        
+        </div>
       </div>
 
-      <nav  class="navbar navbar-expand-lg p-1">
+      <nav class="navbar navbar-expand-lg p-1">
         <div class="container-fluid">
           <button
             class="navbar-toggler"
@@ -62,7 +74,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto">
               <li class="nav-item">
-                <a id="active" class="nav-link " aria-current="page" href="#"
+                <a id="active" class="nav-link" aria-current="page" href="#"
                   >Inicio</a
                 >
               </li>
@@ -82,10 +94,8 @@
           </div>
         </div>
       </nav>
-
     </header>
     <main>
-
       <section>
         <h2>Delicias para todos los gustos</h2>
 
@@ -98,12 +108,13 @@
             poster="./images/tentempies-variados.png"
             controls
           >
-            <source src="./videos/gustos-y-sabores.mp4" type="video/mp4">
+            <source src="./videos/gustos-y-sabores.mp4" type="video/mp4" />
             <track
               src="/videos/subtitulos.vtt"
               kind="subtitles"
               srclang="es"
-              label="Español">
+              label="Español"
+            />
             Tu navegador no soporta el elemento de video.
           </video>
         </div>
@@ -135,12 +146,12 @@
 
       <!-- SECCIÓN PRODUCTOS -->
       <section id="productos" class="productos"></section>
-      
+
       <!-- SECCIÓN RESEÑAS -->
       <section id="resenias" class="resenias-section">
         <h2>Lo que dicen nuestros clientes</h2>
         <div class="resenias">
-          <div class="card">
+          <!-- <div class="card">
             <img src="cliente1.jpg" alt="Cliente 1">
             <h3>Juan Pérez</h3>
             <p>
@@ -168,7 +179,7 @@
             </p>
             <div class="calificacion">⭐⭐⭐⭐⭐</div>
             <span class="fecha">15 de septiembre de 2024</span>
-          </div>
+          </div> -->
         </div>
       </section>
 
@@ -178,49 +189,56 @@
         <div id="contact-container">
           <div class="nuestros-datos">
             <h3>Nuestras vías de contacto</h3>
+            <div><i class="fab fa-whatsapp"></i>&nbsp;&nbsp;1166554433</div>
             <div>
-              <i class="fab fa-whatsapp"></i>&nbsp;&nbsp;1166554433
-            </div>
-            <div>
-              <i class="fas fa-envelope"></i>&nbsp;&nbsp;gustos-y-sabores@gmail.com
+              <i class="fas fa-envelope"></i
+              >&nbsp;&nbsp;gustos-y-sabores@gmail.com
             </div>
             <p>En nuestra sucursal:</p>
-            <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13136.091969670993!2d-58.3955230394937!3d-34.603580098671465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac5db6ce837%3A0xc405fa46b4e37846!2sAv.%20Corrientes%201300%2C%20C1043AAZ%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1728842342384!5m2!1ses-419!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
+            <iframe
+              class="mapa"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13136.091969670993!2d-58.3955230394937!3d-34.603580098671465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac5db6ce837%3A0xc405fa46b4e37846!2sAv.%20Corrientes%201300%2C%20C1043AAZ%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1728842342384!5m2!1ses-419!2sar"
+              width="400"
+              height="300"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
-          <div class="contenedor-form">                      
-              <form action="https://formspree.io/f/xwpedlop" method="POST">
-                <h3>Envianos tu consulta</h3> 
-                <label for="name">Nombre:</label>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  placeholder="Ingrese su nombre aqui..."
-                  required
-                >
+          <div class="contenedor-form">
+            <form action="https://formspree.io/f/xwpedlop" method="POST">
+              <h3>Envianos tu consulta</h3>
+              <label for="name">Nombre:</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Ingrese su nombre aqui..."
+                required
+              />
 
-                <label for="mail">Correo eléctrónico:</label>
-                <input
-                  type="email"
-                  name="mail"
-                  id="mail"
-                  placeholder="Ingrese su correo aqui..."
-                  required
-                >
+              <label for="mail">Correo eléctrónico:</label>
+              <input
+                type="email"
+                name="mail"
+                id="mail"
+                placeholder="Ingrese su correo aqui..."
+                required
+              />
 
-                <label for="message">Mensaje:</label>
-                <textarea
-                  name="message"
-                  id="message"
-                  rows="4"
-                  cols="50"
-                  placeholder="Ingrese su mensaje aqui..."
-                  required
-                ></textarea>
+              <label for="message">Mensaje:</label>
+              <textarea
+                name="message"
+                id="message"
+                rows="4"
+                cols="50"
+                placeholder="Ingrese su mensaje aqui..."
+                required
+              ></textarea>
 
-                <button type="submit">Enviar formulario</button>
-              </form>
+              <button type="submit">Enviar formulario</button>
+            </form>
           </div>
         </div>
       </section>
@@ -240,8 +258,7 @@
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./scripts/reseniasAPI.js"></script>
     <script src="./scripts/apiProducts.js"></script>
-   
-  
   </body>
 </html>
