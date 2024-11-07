@@ -25,14 +25,14 @@
     background-color: var(--fondo-claro);
     box-shadow: 3px 5px 7px rgba(165, 42, 42, 0.8);
     border-radius: 8px;
-    padding: 20px;
+    padding: 20px 5px;
     margin: 10px;
     text-align: center;
     font-weight: bolder;
     display: flex; 
     justify-content: center; 
-    min-width: 300px;
-    max-width: 300px;
+    min-width: 200px;
+    max-width: 200px;
      
   }
 
@@ -42,12 +42,14 @@
     align-items: center;
     justify-content: center; 
     text-align: center; 
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    padding-top: 10px;
   }
 
 .card-body img{
     width: 70px;
     height: 75px;
+    margin-top: 10px;
 }
 
 

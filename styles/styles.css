@@ -193,12 +193,12 @@ details {
   border-radius: 8px;
   padding: 20px;
   margin: 10px;
-  flex: 1 1 300px; /* Controla el tamaño mínimo de cada tarjeta */
+  flex: 1 1 300px; 
   text-align: center;
   font-weight: bolder;
-  display: flex; /* Usar flexbox para organizar elementos */
-  flex-direction: column; /* Dirección vertical */
-  justify-content: space-between; /* Espacio entre elementos */
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-between; 
  
 }
 
@@ -208,29 +208,30 @@ details {
 }
 
 .producto img {
-  max-width: 100%;
-  aspect-ratio: 1;
-  border-radius: 8px;
+  display: block;
+  border-radius: 20px; 
+  padding: 0;
+  width: 250px;
+  height: 300px; 
+  margin: 0 auto;
 }
 
-/* .producto h3 {
-  padding-top: 10px;
-} */
+
 
 /* Estilo para la descripción del producto */
 .descripcion {
-  flex-grow: 1; /* Permite que la descripción ocupe el espacio flexible */
+  flex-grow: 1; 
   margin: 8px 0;
 }
 
 /* Contenedor para precio y botón */
 .footer {
-  margin-top: auto; /* Empujar el footer hacia el fondo */
+  margin-top: auto; 
 }
 
 /* Ajuste de precio para estar por encima del botón */
 .precio {
-  margin-bottom: 10px; /* Espacio entre el precio y el botón */
+  margin-bottom: 10px; 
 }
 
 /* Estilo del botón */
@@ -257,36 +258,7 @@ details {
   justify-content: center; 
   text-align: center; 
 }
-/* .productos-contenedor {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 20px;
-}
-.producto {
-  color: var(--color-acento);
-  background-color: var(--fondo-claro);
-  box-shadow: 3px 5px 7px rgba(165, 42, 42, 0.8);
-  border-radius: 8px;
-  padding: 20px;
-  margin: 10px;
-  flex: 1 1 300px;
-  text-align: center;
-  font-weight: bolder;
-}
 
-.producto:hover {
-  transform: translateY(-5px);
-}
-.producto img {
-  max-width: 100%;
-  aspect-ratio: 1;
-  border-radius: 8px;
-}
-
-.producto h3 {
-  padding-top: 10px;
-} */
 /* ----------------------------------------------------------------------- */
 /* DISEÑO PARA RESEÑAS */
 /* ----------------------------------------------------------------------- */
@@ -307,11 +279,17 @@ details {
   font-weight: bolder;
 }
 
-#resenias img{
-  max-width: 100%;
-  aspect-ratio: 1;
-  border-radius: 8px;
+
+.card img {
+  display: block;
+  border-radius: 20px; 
+  padding: 0;
+  border: solid 3px var(--fondo-oscuro);
+  width: 150px;
+  height: 150px; 
+  margin: 0 auto;
 }
+
 
 .card {
   padding: 20px;
@@ -337,6 +315,7 @@ details {
   display: flex;
   justify-content: center;
   width: 60vw;
+
 }
 
 #contacto form {
@@ -344,7 +323,7 @@ details {
   flex-direction: column;
   justify-content: center;
   gap: 10px;
-  padding-bottom: 20px;
+
 }
 
 #name,
@@ -421,11 +400,10 @@ details {
     max-width: 60px;
   }
 
-  
-    h1 {
+  h1 {
       flex: 1; 
       font-size: 22px;
-    }
+   }
    
 
   .resenias {
@@ -436,15 +414,23 @@ details {
  
   }
 
-  .card {
+ .card {
     margin: 0 auto;
     width: 100%;
+  } 
+
+  #productos{
+    margin: 0 auto;
+  }
+  .producto img {
+
+    width: 190px;
+    height: 190px; 
+    margin: 0 auto;
   }
   .mapa {
     width: 100%;
   }
-
-
 
   h2 {
     font-size: 20px;
@@ -458,8 +444,19 @@ details {
     font-size: 16px;
   }
 
-  .contenedor-form {
-    width: 100%;
+  /* formulario */
+  form{
+    width: 75vw;
+    padding: 0 15px;
+    gap: 0;
+  }
+  .contenedor-form{
+    width: 75vw;
+  }
+
+  #contact-container {
+    flex-direction: column;
+    align-items: center;
   }
 
   #pie {
@@ -498,10 +495,13 @@ details {
   
 }
 
- #contacto form {
-    width: 70vw;
+.contenedor-form{
+    width: 90vw;
   }
 
+form{
+  width: 70vw;
+}
   #contact-container {
     flex-direction: column;
     align-items: center;
@@ -527,7 +527,7 @@ details {
 /* DISEÑO PARA PANTALLAS TAMAÑO grande */
 /* ----------------------------------------------------------------------- */
 @media (min-width: 1024px) {
-  #contacto form {
+  .contenedor-form{
     width: 50vw;
   }
 }
