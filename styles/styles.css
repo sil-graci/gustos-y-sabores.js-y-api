@@ -559,6 +559,9 @@ details {
     flex-direction: column;
     align-items: center;
   }
+  .msj-rellenar{
+    font-size: 12px;
+  }
 
   #pie {
     flex-direction: column;
