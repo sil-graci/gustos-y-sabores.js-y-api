@@ -1,10 +1,11 @@
-let formulario = document.getElementById('formulario');
+const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input, #formulario textarea');
 
 const expresiones = {
   name: /^[a-zA-ZÀ-ÿ]{3,}\s[a-zA-ZÀ-ÿ\s]{1,20}$/,
   mail: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-  message: /^.{8,1500}$/
+  // con /s para que permita salto de línea
+  message:/^.{8,1500}$/s 
 };
 
 let campos = {
@@ -65,7 +66,7 @@ formulario.addEventListener('submit', (e) => {
 
   // Verificar que todos los campos sean válidos y que se hayan aceptado los términos
   if (campos.name && campos.mail && campos.message && terminos.checked) {
-    formulario.reset();
+    
     mensajeExito.classList.add('formulario__mensaje-exito-activo');
     setTimeout(() => {
       mensajeExito.classList.remove('formulario__mensaje-exito-activo');
@@ -83,6 +84,8 @@ formulario.addEventListener('submit', (e) => {
 		mail: false,
 		message: false
 		};
+    // formulario.submit();
+    formulario.reset();
   } else {
     // Mostrar el mensaje de error si faltan campos por completar correctamente
     mensajeError.classList.add('formulario__mensaje-activo');
