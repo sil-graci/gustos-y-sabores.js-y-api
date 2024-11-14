@@ -302,6 +302,21 @@ details {
   transform: translateY(-5px);
 }
 
+#button-resenia {
+  background-color: #368f8b; 
+  color: var(--fondo-claro);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  display: inline-block; 
+  
+}
+
+#button-resenia:hover {
+  background-color: var(--fondo-claro);
+  color:#368f8b; 
+}
+
 /* ----------------------------------------------------------------------- */
 /* DISEÑO PARA FORMULARIO */
 /* ----------------------------------------------------------------------- */
