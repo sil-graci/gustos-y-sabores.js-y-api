@@ -6,14 +6,15 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((response) => response.json())
     .then((data) => {
       if (data.products && data.products.length > 0) {
-        const productos = data.products.slice(0, 6).map((producto) => ({
+        const productos = data.products.slice(1, 7).map((producto) => ({
      
           image_url: producto.image_url,
           product_name: producto.product_name,
           generic_name: producto.generic_name || "Descripción no disponible",
           
         }));
-
+        console.log(productos);
+        
           let productosHTML = `
           <h2>Productos</h2>
           <div class="productos-contenedor">
