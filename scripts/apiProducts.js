@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
               producto.generic_name || "Descripción no disponible";
             const precio = preciosPredefinidos[index] || 1000;
             producto.precio = precio;
-
+          
             productosHTML += `
             <div class="producto">
               <img src="${imagen}" alt="${alt}">
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <p class="descripcion">${descripcion}</p>
               <div class="footer">
                 <p class="precio">$${precio.toFixed(2)}</p>
-                <a href="#" class="btn btn-card" data-index="${index}">Agregar al carrito</a>
+                <button class="btn btn-card" data-index="${index}">Agregar al carrito</button>
               </div>
             </div>
           `;
@@ -48,20 +48,21 @@ document.addEventListener("DOMContentLoaded", () => {
           const productosElement = document.getElementById("productos");
 
           productosElement.innerHTML = productosHTML;
-
+        
+           // console.log(productosElement);
+       
           // Agregar los event listeners para los botones "Agregar al carrito" en cada producto
           let productosButtons = document.querySelectorAll(
             "#productos .btn.btn-card"
           );
           productosButtons.forEach((button) => {
             button.addEventListener("click", (event) => {
-              event.preventDefault();
               let index = event.target.getAttribute("data-index");
               agregarAlCarrito(productos[index]);
             });
           });
 
-          actualizarNumeroCarrito();
+          // actualizarNumeroCarrito();
         } else {
           console.log("No se encontraron productos.");
         }
@@ -78,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!memoria) {
       // Si no hay datos en localStorage, agregar el primer producto con cantidad 1
-      const nuevoProducto = { ...producto, cantidad: 1, precio: producto.precio};      
+      const nuevoProducto = { ...producto, cantidad: 1};      
       localStorage.setItem("seleccionados", JSON.stringify([nuevoProducto]));
     } else {
       // Si ya hay datos, parsear el JSON para obtener un array de productos
@@ -94,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
         productoExistente.cantidad++;
       } else {
         // Si el producto no existe en el carrito, agregarlo con cantidad 1
-        const nuevoProducto = { ...producto, cantidad: 1, precio: producto.precio };
+        const nuevoProducto = { ...producto, cantidad: 1 };
         productosEnCarrito.push(nuevoProducto);
       }
 
