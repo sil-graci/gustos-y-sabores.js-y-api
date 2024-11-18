@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((data) => {
       if (data.products && data.products.length > 0) {
         const productos = data.products.slice(1, 7).map((producto) => ({
-     
+          id: producto._id,
           image_url: producto.image_url,
           product_name: producto.product_name,
           generic_name: producto.generic_name || "Descripción no disponible",
@@ -57,7 +57,11 @@ document.addEventListener("DOMContentLoaded", () => {
           );
           productosButtons.forEach((button) => {
             button.addEventListener("click", (event) => {
+              // console.log(event.target);
+              
               let index = event.target.getAttribute("data-index");
+              // console.log(index);
+              
               agregarAlCarrito(productos[index]);
             });
           });
@@ -74,20 +78,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Función para manejar la lógica de agregar productos al carrito y almacenarlos en localStorage
   function agregarAlCarrito(producto) {
-    // Obtener los datos actuales del carrito almacenados en localStorage
+    // Obtener los datos actuales del carrito almacenados en localStorage con clave seleccionados
     const memoria = localStorage.getItem("seleccionados");
 
     if (!memoria) {
       // Si no hay datos en localStorage, agregar el primer producto con cantidad 1
       const nuevoProducto = { ...producto, cantidad: 1};      
       localStorage.setItem("seleccionados", JSON.stringify([nuevoProducto]));
+     
     } else {
       // Si ya hay datos, parsear el JSON para obtener un array de productos
       const productosEnCarrito = JSON.parse(memoria);
-
       // Verificar si el producto ya está en el carrito
       const productoExistente = productosEnCarrito.find(
-        (p) => p.product_name === producto.product_name
+        (p) => p.id === producto.id
       );
 
       if (productoExistente) {
