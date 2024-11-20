@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function crearTarjetasProductosCarrito() {
     contenedorTarjetas.innerHTML = "";
     const productos = JSON.parse(localStorage.getItem("seleccionados")) || [];
-
+    console.log(productos);
+    
     if (productos.length > 0) {
       carritoVacioElement.style.display = "none";
       continuarCompraElement.style.display = "block";
@@ -44,6 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       cantidadElement.textContent = totalCantidad;
       precioElement.textContent = totalPrecio.toFixed(2);
+
+
     } else {
       carritoVacioElement.style.display = "block";
       continuarCompraElement.style.display = "none";

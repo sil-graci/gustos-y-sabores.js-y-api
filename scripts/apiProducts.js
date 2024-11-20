@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
     )
     .then((response) => response.json())
     .then((data) => {
+      // console.log(data);
+      
       if (data.products && data.products.length > 0) {
         const productos = data.products.slice(1, 7).map((producto) => ({
           id: producto._id,
@@ -116,10 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Función para actualizar el número total de productos en el carrito
   function actualizarNumeroCarrito() {
     const memoria = JSON.parse(localStorage.getItem("seleccionados") || "[]");
-    const cuenta = memoria.reduce(
-      (acum, current) => acum + current.cantidad,
-      0
-    );
+    const cuenta = memoria.reduce((acum, current) => acum + current.cantidad,0);
     cuentaCarritoElement.innerText = cuenta;
   }
 
