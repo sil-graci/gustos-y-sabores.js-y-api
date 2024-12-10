@@ -71,13 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  /** Actualiza el número de productos en el ícono del carrito */
-  // function actualizarNumeroCarrito() {
-  //   const memoria = JSON.parse(localStorage.getItem("seleccionados")) || [];
-  //   const cuenta = memoria.reduce((acum, current) => acum + current.cantidad, 0);
-  //   document.getElementById("cuenta-carrito").textContent = cuenta;
-  // }
-
   /** Reinicia el carrito */
   document.getElementById("reiniciar").addEventListener("click", () => {
     localStorage.removeItem("seleccionados");

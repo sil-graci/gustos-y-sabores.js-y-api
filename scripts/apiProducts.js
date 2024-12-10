@@ -110,17 +110,6 @@ document.addEventListener("DOMContentLoaded", () => {
     actualizarNumeroCarrito();
   }
 
-  // Elemento del contador del carrito
-  // const cuentaCarritoElement = document.getElementById("cuenta-carrito");
-
-  // Función para actualizar el número total de productos en el carrito
-  // function actualizarNumeroCarrito() {
-  //   const memoria = JSON.parse(localStorage.getItem("seleccionados") || "[]");
-  //   const cuenta = memoria.reduce((acum, current) => acum + current.cantidad,0);
-  //   document.getElementById("cuenta-carrito").textContent = cuenta;
-  //   // cuentaCarritoElement.innerText = cuenta;
-  // }
-
-  // Actualizar el contador al cargar la página
+   // Actualizar el contador al cargar la página
   actualizarNumeroCarrito();
 });
