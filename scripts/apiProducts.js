@@ -3,20 +3,19 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch(
       "https://world.openfoodfacts.org/cgi/search.pl?search_terms=snack&json=true&lc=es"
     )
-    .then((response) => response.json())
-    .then((data) => {
-      // console.log(data);
-      
-      if (data.products && data.products.length > 0) {
-        const productos = data.products.slice(1, 7).map((producto) => ({
-          id: producto._id,
-          image_url: producto.image_url,
-          product_name: producto.product_name,
-          generic_name: producto.generic_name || "Descripción no disponible",
-          
-        }));
-        console.log(productos);
-        
+      .then((response) => response.json())
+      .then((data) => {
+        // console.log(data);
+
+        if (data.products && data.products.length > 0) {
+          const productos = data.products.slice(1, 7).map((producto) => ({
+            id: producto._id,
+            image_url: producto.image_url,
+            product_name: producto.product_name,
+            generic_name: producto.generic_name || "Descripción no disponible",
+          }));
+          console.log(productos);
+
           let productosHTML = `
           <h2>Productos</h2>
           <div class="productos-contenedor">
@@ -32,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
               producto.generic_name || "Descripción no disponible";
             const precio = preciosPredefinidos[index] || 1000;
             producto.precio = precio;
-          
+
             productosHTML += `
             <div class="producto">
               <img src="${imagen}" alt="${alt}">
@@ -50,9 +49,9 @@ document.addEventListener("DOMContentLoaded", () => {
           const productosElement = document.getElementById("productos");
 
           productosElement.innerHTML = productosHTML;
-        
-           // console.log(productosElement);
-       
+
+          // console.log(productosElement);
+
           // Agregar los event listeners para los botones "Agregar al carrito" en cada producto
           let productosButtons = document.querySelectorAll(
             "#productos .btn.btn-card"
@@ -60,10 +59,10 @@ document.addEventListener("DOMContentLoaded", () => {
           productosButtons.forEach((button) => {
             button.addEventListener("click", (event) => {
               // console.log(event.target);
-              
+
               let index = event.target.getAttribute("data-index");
               // console.log(index);
-              
+
               agregarAlCarrito(productos[index]);
             });
           });
@@ -85,9 +84,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!memoria) {
       // Si no hay datos en localStorage, agregar el primer producto con cantidad 1
-      const nuevoProducto = { ...producto, cantidad: 1};      
+      const nuevoProducto = { ...producto, cantidad: 1 };
       localStorage.setItem("seleccionados", JSON.stringify([nuevoProducto]));
-     
     } else {
       // Si ya hay datos, parsear el JSON para obtener un array de productos
       const productosEnCarrito = JSON.parse(memoria);
@@ -113,14 +111,15 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Elemento del contador del carrito
-  const cuentaCarritoElement = document.getElementById("cuenta-carrito");
+  // const cuentaCarritoElement = document.getElementById("cuenta-carrito");
 
   // Función para actualizar el número total de productos en el carrito
-  function actualizarNumeroCarrito() {
-    const memoria = JSON.parse(localStorage.getItem("seleccionados") || "[]");
-    const cuenta = memoria.reduce((acum, current) => acum + current.cantidad,0);
-    cuentaCarritoElement.innerText = cuenta;
-  }
+  // function actualizarNumeroCarrito() {
+  //   const memoria = JSON.parse(localStorage.getItem("seleccionados") || "[]");
+  //   const cuenta = memoria.reduce((acum, current) => acum + current.cantidad,0);
+  //   document.getElementById("cuenta-carrito").textContent = cuenta;
+  //   // cuentaCarritoElement.innerText = cuenta;
+  // }
 
   // Actualizar el contador al cargar la página
   actualizarNumeroCarrito();
